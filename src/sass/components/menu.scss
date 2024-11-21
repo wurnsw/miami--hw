@@ -1,5 +1,6 @@
 .menu {
   background-color: $color-blue;
+
   &__content {
     padding: $headerTopPadding 0;
 
@@ -8,17 +9,21 @@
 
   &__top {
     margin-bottom: 48px;
+
+    @include top-actions;
   }
 
   &__list {
     margin-bottom: 48px;
   }
+
   &__item {
     margin-bottom: 24px;
-    &:last-child{
+    &:last-child {
       margin-bottom: 0;
     }
   }
+
   &__link {
     display: inline-block;
 
