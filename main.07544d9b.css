@@ -90,27 +90,16 @@ address {
   justify-content: space-between;
   height: 100vh;
 }
+.header__top {
+  --icon-width: 18px;
+  display: grid;
+  grid-template-columns: var(--icon-width) 1fr var(--icon-width);
+  justify-items: center;
+  align-items: center;
+}
 @media screen and (min-width: 1200px) {
-  .header__call::before {
-    position: relative;
-    top: 50%;
-    transform: translate(-100%, -50%);
-    padding-right: 20px;
-    width: max-content;
-    display: block;
-    content: "+1 234 555-55-55";
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 16px;
-    letter-spacing: 2px;
-    color: #ffffff;
-    opacity: 0;
-    transition: opacity 250ms;
-    pointer-events: none;
-  }
-  .header__call:hover::before {
-    opacity: 1;
-    pointer-events: all;
+  .header__top {
+    --icon-width: 24px;
   }
 }
 .header__title {
@@ -146,6 +135,7 @@ address {
 }
 
 .icon {
+  position: relative;
   width: 100%;
   padding-bottom: 100%;
   display: block;
@@ -153,9 +143,31 @@ address {
   background-repeat: no-repeat;
   background-size: contain;
 }
+.icon__tooltip {
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-right: 20px;
+  width: max-content;
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 2px;
+  color: #ffffff;
+  opacity: 0;
+  transition: opacity 250ms;
+  pointer-events: none;
+}
+.icon:hover .icon__tooltip {
+  opacity: 1;
+  pointer-events: all;
+}
 .icon--menu {
   background-image: url("/menu.2b71b4ce.svg");
   cursor: pointer;
+  transition: background-image 250ms;
 }
 @media screen and (min-width: 1200px) {
   .icon--menu:hover {
@@ -169,19 +181,6 @@ address {
   background-image: url("/menu-close.120fa725.svg");
 }
 
-.top-actions {
-  --icon-width: 18px;
-  display: grid;
-  grid-template-columns: var(--icon-width) 1fr var(--icon-width);
-  justify-items: center;
-  align-items: center;
-}
-@media screen and (min-width: 1200px) {
-  .top-actions {
-    --icon-width: 24px;
-  }
-}
-
 .menu {
   background-color: #0075ff;
 }
@@ -191,6 +190,16 @@ address {
 }
 .menu__top {
   margin-bottom: 48px;
+  --icon-width: 18px;
+  display: grid;
+  grid-template-columns: var(--icon-width) 1fr var(--icon-width);
+  justify-items: center;
+  align-items: center;
+}
+@media screen and (min-width: 1200px) {
+  .menu__top {
+    --icon-width: 24px;
+  }
 }
 .menu__list {
   margin-bottom: 48px;
@@ -234,6 +243,40 @@ address {
 .menu__call--action {
   padding-bottom: 8px;
   border-bottom: 1px solid;
+}
+
+.footer {
+  padding-bottom: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  background-image: url("/footer-bg.b8b63089.webp");
+  height: 320px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  .footer {
+    background: url("/footer-bg-@2x.d5b9b216.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
+@media (min-device-pixel-ratio: 3), (-webkit-min-device-pixel-ratio: 3), (min-resolution: 288dpi), (min-resolution: 3dppx) {
+  .footer {
+    background: url("/footer-bg-@3x.fa520b7e.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .footer {
+    padding-bottom: 36px;
+    height: 360px;
+  }
 }
 
 /*# sourceMappingURL=/main.07544d9b.css.map */
