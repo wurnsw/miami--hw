@@ -18,4 +18,39 @@
       transform: translate(0);
     }
   }
+
+  &__section {
+    margin-bottom: 64px;
+  }
+
+  &__section-title {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: -1.5px;
+    text-align: center;
+
+    color: $color-black;
+
+    &::after {
+      margin: 4px auto 0;
+
+      content: "";
+
+      display: block;
+
+      width: 23px;
+      height: 16px;
+
+      background-image: url("../images/title-logo.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+      line-height: 48px;
+    }
+  }
 }
