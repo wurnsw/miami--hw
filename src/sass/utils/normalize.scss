@@ -1,0 +1,23 @@
+@import "variables";
+
+html {
+  scroll-behavior: smooth;
+  font-family: $font-main;
+  color: $color-black;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+address{
+  font-family: $font-main;
+  font-style: normal;
+}
