@@ -17,12 +17,6 @@ ol {
   list-style: none;
 }
 
-html {
-  scroll-behavior: smooth;
-  font-family: Roboto, sans-serif;
-  color: #212121;
-}
-
 a {
   text-decoration: none;
   color: inherit;
@@ -37,6 +31,23 @@ a {
 address {
   font-family: Roboto, sans-serif;
   font-style: normal;
+}
+
+.page {
+  scroll-behavior: smooth;
+  font-family: Roboto, sans-serif;
+  color: #212121;
+}
+.page__menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateX(-100%);
+  transition: transform 500ms;
+}
+.page__menu:target {
+  transform: translate(0);
 }
 
 .container {
@@ -73,56 +84,33 @@ address {
   }
 }
 .header__content {
-  padding: 24px 20px 80px;
+  padding: 24px 0 80px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
 }
-.header__nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.header__icon {
-  height: 24px;
-  width: 24px;
-}
 @media screen and (min-width: 1200px) {
-  .header__icon {
-    height: 34px;
-    width: 34px;
+  .header__call::before {
+    position: relative;
+    top: 50%;
+    transform: translate(-100%, -50%);
+    padding-right: 20px;
+    width: max-content;
+    display: block;
+    content: "+1 234 555-55-55";
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 2px;
+    color: #ffffff;
+    opacity: 0;
+    transition: opacity 250ms;
+    pointer-events: none;
   }
-}
-.header__menu-opener {
-  width: 18px;
-  height: 12px;
-  background-image: url("/menu.2b71b4ce.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-@media screen and (min-width: 1200px) {
-  .header__menu-opener {
-    width: 24px;
-    height: 16px;
-  }
-  .header__menu-opener:hover {
-    background-image: url("/menu-hover.58a3782b.svg");
-  }
-}
-.header__call {
-  width: 18px;
-  height: 18px;
-  background-image: url("/phone.b979c70b.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-@media screen and (min-width: 1200px) {
-  .header__call {
-    width: 24px;
-    height: 24px;
+  .header__call:hover::before {
+    opacity: 1;
+    pointer-events: all;
   }
 }
 .header__title {
@@ -155,6 +143,97 @@ address {
   .logo__image {
     height: 80px;
   }
+}
+
+.icon {
+  width: 100%;
+  padding-bottom: 100%;
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon--menu {
+  background-image: url("/menu.2b71b4ce.svg");
+  cursor: pointer;
+}
+@media screen and (min-width: 1200px) {
+  .icon--menu:hover {
+    background-image: url("/menu-hover.58a3782b.svg");
+  }
+}
+.icon--phone {
+  background-image: url("/phone.b979c70b.svg");
+}
+.icon--close {
+  background-image: url("/menu-close.120fa725.svg");
+}
+
+.top-actions {
+  --icon-width: 18px;
+  display: grid;
+  grid-template-columns: var(--icon-width) 1fr var(--icon-width);
+  justify-items: center;
+  align-items: center;
+}
+@media screen and (min-width: 1200px) {
+  .top-actions {
+    --icon-width: 24px;
+  }
+}
+
+.menu {
+  background-color: #0075ff;
+}
+.menu__content {
+  padding: 24px 0;
+  height: 100vh;
+}
+.menu__top {
+  margin-bottom: 48px;
+}
+.menu__list {
+  margin-bottom: 48px;
+}
+.menu__item {
+  margin-bottom: 24px;
+}
+.menu__item:last-child {
+  margin-bottom: 0;
+}
+.menu__link {
+  display: inline-block;
+  padding-bottom: 8px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-bottom: 1px solid transparent;
+  color: #ffffff;
+  transition: border-color 250ms;
+}
+@media screen and (min-width: 1200px) {
+  .menu__link:hover {
+    border-color: #ffffff;
+  }
+}
+.menu__call {
+  display: block;
+  width: max-content;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.menu__call--phone {
+  margin-bottom: 16px;
+}
+.menu__call--action {
+  padding-bottom: 8px;
+  border-bottom: 1px solid;
 }
 
 /*# sourceMappingURL=/main.07544d9b.css.map */
