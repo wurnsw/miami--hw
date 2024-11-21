@@ -1,0 +1,37 @@
+.about {
+  &__title {
+    margin: 0 0 48px;
+
+    @include title-Typography;
+
+    @include onDesktop {
+      margin: 0;
+
+      font-size: 48px;
+      line-height: 48px;
+    }
+  }
+
+  &__title-link {
+    color: $color-blue;
+  }
+
+  &__subtitle {
+    display: block;
+    margin-bottom: 16px;
+
+    @include blue-Typography;
+  }
+
+  &__paragraph {
+    margin: 0 0 27px;
+
+    @include secondary-Typography;
+
+    &--important {
+      margin: 0;
+      
+      font-weight: 700;
+    }
+  }
+}

@@ -4,6 +4,12 @@
   font-family: $font-main;
   color: $color-black;
 
+  &__body {
+    &:has(.burger-menu:target) {
+      overflow: hidden;
+    }
+  }
+
   &__menu {
     position: fixed;
     top: 0;
@@ -21,13 +27,15 @@
 
   &__section {
     margin-bottom: 64px;
+
+    @include onDesktop {
+      margin-bottom: 104px;
+    }
   }
 
   &__section-title {
-    font-size: 36px;
-    font-weight: 700;
-    line-height: 36px;
-    letter-spacing: -1.5px;
+    @include title-Typography;
+
     text-align: center;
 
     color: $color-black;
