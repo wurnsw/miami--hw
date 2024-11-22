@@ -1,0 +1,39 @@
+.form-field {
+  padding: 14px 16px;
+
+  height: 48px;
+  width: 100%;
+
+  outline: none;
+
+  border: 2px solid transparent;
+  border-radius: 8px;
+
+  color: $color-black;
+  background-color: $color-input;
+
+  transition: border 250ms;
+
+  &::placeholder {
+    font-size: 14px;
+    line-height: 20px;
+
+    color: #8f99a8;
+  }
+
+  &:hover {
+    border-color: #ccd0e0;
+  }
+
+  &:focus {
+    border: 2px solid $color-blue;
+  }
+
+  &--textarea {
+    height: 144px;
+
+    font-family: inherit;
+
+    resize: none;
+  }
+}
