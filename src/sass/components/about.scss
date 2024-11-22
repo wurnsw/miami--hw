@@ -26,11 +26,9 @@
   &__paragraph {
     margin: 0 0 27px;
 
-    @include secondary-Typography;
-
     &--important {
       margin: 0;
-      
+
       font-weight: 700;
     }
   }
